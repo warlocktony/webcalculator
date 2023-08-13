@@ -1,6 +1,7 @@
-package com.warlocktony.webcalculator;
+package com.warlocktony.webcalculator.controller;
 
 
+import com.warlocktony.webcalculator.service.CalculatorService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,21 +21,18 @@ public class CalculatorController {
 
     @GetMapping(path = "/plus")
     public String answerPlus(@RequestParam("num1") int num1, @RequestParam("num2") int num2){
-        return calculatorService.answerPlus(num1,num2);
+        return num1 + " + " + num2 + " = " + calculatorService.answerPlus(num1,num2);
     }
     @GetMapping(path = "/minus")
     public String answerMinus(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
-        return calculatorService.answerMinus(num1,num2);
+        return num1 + " - " + num2 + " = " + calculatorService.answerMinus(num1,num2);
     }
     @GetMapping(path = "/multiply")
     public String answerMultiply(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
-        return calculatorService.answerMultiply(num1,num2);
+        return num1 + " * " + num2 + " = " + calculatorService.answerMultiply(num1,num2);
     }
     @GetMapping(path = "/divide")
     public String answerDivide(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
-        if (num2 == 0){
-            return "DIVIDE ON 0 FORBIDDEN!!!";
-        }
-        return calculatorService.answerDivide(num1,num2);
+        return num1 + " / " + num2 + " = " + calculatorService.answerDivide(num1,num2);
     }
 }
