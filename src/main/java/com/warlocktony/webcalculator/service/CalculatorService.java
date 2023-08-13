@@ -1,6 +1,7 @@
 package com.warlocktony.webcalculator.service;
 
 public interface CalculatorService {
+
     String welcome();
 
     int answerPlus(int num1, int num2);
