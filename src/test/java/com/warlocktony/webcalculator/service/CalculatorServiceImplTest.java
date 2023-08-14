@@ -21,13 +21,13 @@ public class CalculatorServiceImplTest {
     }
 
     @Test
-    void plus_num1AndNum2Positive_checkPlusAnswer() {
+    void plus_num1AndNum2Positive_resultPositive() {
         var result = underTest.answerPlus(4, 8);
         assertEquals(12, result);
     }
 
     @Test
-    void plus_num1AndNum2Negative_checkPlusAnswer() {
+    void plus_num1AndNum2Negative_resultNegative() {
         var result = underTest.answerPlus(-8, 4);
         assertEquals(-4, result);
     }
@@ -60,13 +60,13 @@ public class CalculatorServiceImplTest {
     }
 
     @Test
-    void minus_ifNum1IsBigNum2_checkMinusAnswer() {
+    void minus_ifNum1IsBigNum2_resultPositive() {
         var result = underTest.answerMinus(8, 4);
         assertEquals(4, result);
     }
 
     @Test
-    void minus_ifNum2IsBigNum1_checkMinusAnswer() {
+    void minus_ifNum2IsBigNum1_resultNegative() {
         var result = underTest.answerMinus(4, 8);
         assertEquals(-4, result);
     }
@@ -87,13 +87,13 @@ public class CalculatorServiceImplTest {
     }
 
     @Test
-    void multiply_num1AndNum2Positive_checkMultiplyAnswer() {
+    void multiply_num1AndNum2Positive_resultPositive() {
         var result = underTest.answerMultiply(2, 2);
         assertEquals(4, result);
     }
 
     @Test
-    void multiply_num1AndNum2Negative_checkMultiplyAnswer() {
+    void multiply_num1AndNum2Negative_resultNegative() {
         var result = underTest.answerMultiply(-2, 2);
         assertEquals(-4, result);
     }
