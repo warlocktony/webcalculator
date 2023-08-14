@@ -21,32 +21,32 @@ public class CalculatorServiceImplTest {
     }
 
     @Test
-    void plus_checkPlusAnswer() {
+    void plus_num1AndNum2Positive_checkPlusAnswer() {
         var result = underTest.answerPlus(4, 8);
         assertEquals(12, result);
     }
 
     @Test
-    void plus_checkPlusNegativeAnswer() {
+    void plus_num1AndNum2Negative_checkPlusAnswer() {
         var result = underTest.answerPlus(-8, 4);
         assertEquals(-4, result);
     }
 
     @Test
-    void plus_checkPlusMaxValue_throwIllegalArgumentException() {
+    void plus_num1AndNum2AreIntegerMaxValue_throwIllegalArgumentException() {
         assertThrows(IllegalArgumentException.class,
-                () -> underTest.answerPlus(2_147_483_647, 2_147_483_647));
+                () -> underTest.answerPlus(Integer.MAX_VALUE, Integer.MAX_VALUE));
     }
 
     @Test
-    void plus_checkPlusMinValue_throwIllegalArgumentException() {
+    void plus_num1AndNum2AreIntegerMinValue_throwIllegalArgumentException() {
         assertThrows(IllegalArgumentException.class,
-                () -> underTest.answerPlus(-2_147_483_647, -2_147_483_647));
+                () -> underTest.answerPlus(Integer.MIN_VALUE, Integer.MIN_VALUE));
     }
 
     @ParameterizedTest
     @MethodSource("dataForPlus")
-    void plus__resultInt(int num1, int num2, double expectedResult) {
+    void plus__resultInt(int num1, int num2, int expectedResult) {
         var result = underTest.answerPlus(num1, num2);
         assertEquals(expectedResult, result);
 
@@ -60,20 +60,20 @@ public class CalculatorServiceImplTest {
     }
 
     @Test
-    void minus_checkMinusIfNum1IsBigNum2IAnswer() {
+    void minus_ifNum1IsBigNum2_checkMinusAnswer() {
         var result = underTest.answerMinus(8, 4);
         assertEquals(4, result);
     }
 
     @Test
-    void minus_checkMinusIfNum2IsBigNum1IAnswer() {
+    void minus_ifNum2IsBigNum1_checkMinusAnswer() {
         var result = underTest.answerMinus(4, 8);
         assertEquals(-4, result);
     }
 
     @ParameterizedTest
     @MethodSource("dataForMinus")
-    void minus__resultInt(int num1, int num2, double expectedResult) {
+    void minus__resultInt(int num1, int num2, int expectedResult) {
         var result = underTest.answerMinus(num1, num2);
         assertEquals(expectedResult, result);
 
@@ -87,20 +87,20 @@ public class CalculatorServiceImplTest {
     }
 
     @Test
-    void multiply_checkMultiplyAnswer() {
+    void multiply_num1AndNum2Positive_checkMultiplyAnswer() {
         var result = underTest.answerMultiply(2, 2);
         assertEquals(4, result);
     }
 
     @Test
-    void multiply_checkMultiplyNegativeAnswer() {
+    void multiply_num1AndNum2Negative_checkMultiplyAnswer() {
         var result = underTest.answerMultiply(-2, 2);
         assertEquals(-4, result);
     }
 
     @ParameterizedTest
     @MethodSource("dataForMultiply")
-    void multiply__resultInt(int num1, int num2, double expectedResult) {
+    void multiply__resultInt(int num1, int num2, int expectedResult) {
         var result = underTest.answerMultiply(num1, num2);
         assertEquals(expectedResult, result);
 
@@ -114,15 +114,15 @@ public class CalculatorServiceImplTest {
     }
 
     @Test
-    void multiply_checkMultiplyMaxValue_throwIllegalArgumentException() {
+    void multiply_num1AndNum2AreIntegerMaxValue_throwIllegalArgumentException() {
         assertThrows(IllegalArgumentException.class,
-                () -> underTest.answerMultiply(46_500, 46_500));
+                () -> underTest.answerMultiply(Integer.MAX_VALUE, Integer.MAX_VALUE));
     }
 
     @Test
-    void multiply_checkMultiplyMinValue_throwIllegalArgumentException() {
+    void multiply_num1AndNum2AreIntegerMinValue_throwIllegalArgumentException() {
         assertThrows(IllegalArgumentException.class,
-                () -> underTest.answerMultiply(-46_500, -46_500));
+                () -> underTest.answerMultiply(Integer.MIN_VALUE, Integer.MIN_VALUE));
     }
 
 

@@ -16,7 +16,7 @@ public class CalculatorServiceImpl implements CalculatorService {
 
         if ((num1 & num2) <= 1_073_741_821 &
                 (num1 & num2) >= -1_073_741_821) {
-            return num1 + num2;
+            return  num1 + num2;
         } else {
             throw new IllegalArgumentException();
         }
@@ -25,7 +25,7 @@ public class CalculatorServiceImpl implements CalculatorService {
     public int answerMinus(int num1, int num2) {
         if ((num1 & num2) <= 1_073_741_821 &
                 (num1 & num2) >= -1_073_741_821) {
-            return num1 - num2;
+            return  num1 - num2;
         } else {
             throw new IllegalArgumentException();
         }
@@ -35,7 +35,7 @@ public class CalculatorServiceImpl implements CalculatorService {
     public int answerMultiply(int num1, int num2) {
         if ((num1 & num2) <= 46_300 &
                 (num1 & num2) >= -46_300) {
-            return num1 * num2;
+            return  num1 * num2;
         } else {
             throw new IllegalArgumentException();
         }
